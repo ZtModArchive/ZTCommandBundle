@@ -1,0 +1,43 @@
+<ZT2Strings>
+   <!--entity names-->
+   <entityname>
+      <!--scenery object names-->
+      <Cheater>Cheat Codes</Cheater>
+      <Cheater_stt>Cheat Codes</Cheater_stt>
+      <Cheater_lower>Cheat Codes</Cheater_lower>
+      <Cheater_ltt>
+         <color r="255" g="248" b="178">
+            <b>Cheat Codes</b>
+         </color>
+         <br />
+         Place this item to enable the Cheat Codes mod.
+      </Cheater_ltt>
+   </entityname>
+   <LOC_STRING _locID="zoopedia_cheater:entry">Cheat Codes</LOC_STRING>
+   <LOC_STRING _locID="zoopedia_cheater:text">
+      <cell pady="0" width="1000" />
+      <p />
+      <cell width="260" />
+      <cell width="640" height="320" bgimg="ui/zoopedia/topCellBg.dds">
+         <cell width="600" padx="20" pady="20">
+            <color r="255" g="255" b="255">
+               <img src="entities/objects/scenery/Cheater/Cheater_icon.dds" sx="0" sy="0" sw="64" sh="64" />
+               <p />
+               Placing this object in your zoo will active the cheat codes mod.
+               <p />
+               Name an animal 'Young' and it will turn from adult into a young.
+               <p />
+               Name a female animal 'Pregnant' and it will become pregnant.
+		
+Made by
+               <u>
+                  <color r="255" g="231" b="135">Thom</color>
+               </u>
+               <u>
+                  <color r="255" g="231" b="135"></color>
+               </u>
+            </color>
+         </cell>
+      </cell>
+   </LOC_STRING>
+</ZT2Strings>

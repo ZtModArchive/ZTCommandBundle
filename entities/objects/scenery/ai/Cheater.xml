@@ -1,0 +1,93 @@
+<BFTypedBinder binderType="Cheater">
+	<types>
+		<entity>
+			<scenery>
+			<abstractcheater>
+					<Cheater />
+			</abstractcheater>
+			</scenery>
+		</entity>
+	</types>
+	<instance>
+      <BFGEntity entityVersion="1">
+         <physObjParenting>
+            <parentObj parent="mainObj" child="shadowObj" rottype="use" postype="ignore"
+               attachnode="link"/>
+         </physObjParenting>
+      </BFGEntity>
+	</instance>
+	<shared>
+		<ZTPlacementData icon3Doffset="0 -0.070264 0.323747" icon3Dscale="0.38" autoFootprint="false" gridSnap="false" landPlacement="true">
+			<cfootprint width="0" height="0" />
+			<dfootprint width="1" height="1" />
+		</ZTPlacementData>
+		<UIToggleButton template="adopt">
+			<UIAspect>
+				<default image="entities\objects\scenery\Cheater\Cheater_icon.dds" />
+			</UIAspect>
+			<UIHelpInfo name="" short="" long="" help="" ids="entityname:Cheater" />
+			<on>
+				<event msg="ZT_SETPLACEMENTOBJECT" data="BFString" string="Cheater" />
+			</on>
+		</UIToggleButton>
+		<BFAIEntityDataShared s_uisort="aa" b_ReceiveUpdates="true" s_Zoopedia="zoopedia:zoopedia_cheater:entry" f_FameReq="10" />
+	</shared>
+	<binder>
+		<BFNamedBinder binderName="mainObj">
+			<instance>
+				<BFPhysObj>
+					  <BFSceneGraphComponent modelfile="entities\objects\scenery" scale="0.325" switch="0 9999999" />
+					<BFMultiGroundFitComponent heightOffset="0.0" />
+				</BFPhysObj>
+			</instance>
+		</BFNamedBinder>
+		<BFBinder>
+			<instance>
+				<ZTEconomyComponent cost="1">
+					<ZTTransaction name="build" costType="parent" type="debit" category="construction" />
+					<ZTTransaction name="destroy" cost="80" costType="%parent" type="credit" category="recycling" />
+				</ZTEconomyComponent>
+			</instance>
+		</BFBinder>
+      	   <BFBinder required="1">
+         <instance>
+            <BFAICognitiveMgr>
+               <Sensors>
+                  <ZTAISensor/>
+                  <BFAISensorSelf/>
+                  <ZTAISensorLand/>
+               </Sensors>
+					<StateThinkers>
+					<ZTAIStateThinker>
+					</ZTAIStateThinker>
+					</StateThinkers>
+               <TaskThinkers>
+                  <ZTAITaskThinker/>
+               </TaskThinkers>
+            </BFAICognitiveMgr>
+         </instance>
+         <shared>
+            <BFAICogShared>
+               <BFAINoPerceive>
+                  <fence/>
+                  <path/>
+                  <building/>
+                  <entrance/>
+                  <AnimalCrate/>
+               </BFAINoPerceive>
+            </BFAICogShared>
+         </shared>
+      </BFBinder>
+	  		<BFBinder required="1">
+			<instance>
+            <BFBehaviorMgr behaviorVersion="1">
+            </BFBehaviorMgr>
+			</instance>
+		</BFBinder>
+		      <BFBinder required="1">
+         <instance>
+            <BFAIEntityDataInstance f_occupied="0" f_guest="0" s_name="unnamed" f_Number="0" f_Test="5"/>
+         </instance>
+      </BFBinder>
+	</binder>
+</BFTypedBinder>

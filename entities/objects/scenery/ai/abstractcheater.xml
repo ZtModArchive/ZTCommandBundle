@@ -1,0 +1,14 @@
+<BFTypedBinder binderType="abstractcheater" abstract="true" >
+   <types>
+      <entity>
+         <scenery>
+               <abstractcheater/>
+         </scenery>
+      </entity>
+   </types>
+   <instance>
+      <BFGEntity entityVersion="1"/>
+   </instance>
+   <shared/>
+   <binder/>
+</BFTypedBinder>

@@ -1,0 +1,23 @@
+<BFAITaskTemplateList>
+   <BFAITaskTemplate Name="ZTcommand" Priority="10" UniqueID="Cheater:ZTcommand">
+      <BFAICreateData>
+         <Subjects>
+            <Cheater />
+         </Subjects>
+         <Targets>
+            <self />
+         </Targets>
+         <Objects></Objects>
+      </BFAICreateData>
+      <BFAIEvalData fixedScore="10000" />
+      <BFBehExecTask>
+         <BFBehScript context="behavior" file="scripts/ztcommand/Main.lua" function="Main" />
+      </BFBehExecTask>
+      <BFAICompletionData />
+      <BFAIFailureData>
+         <BFBehExecTask>
+            <BFBehPlaySet behSet="FailureSet" />
+         </BFBehExecTask>
+      </BFAIFailureData>
+   </BFAITaskTemplate>
+</BFAITaskTemplateList>
