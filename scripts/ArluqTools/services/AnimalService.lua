@@ -4,9 +4,6 @@ include "scenario/scripts/token.lua"
 include "scenario/scripts/ui.lua"
 include "scenario/scripts/misc.lua"
 
--- Include tools script
-include "scripts/tools/luaTools.lua"
-
 --- Service for modifiying animals.
 AnimalService = {}
 

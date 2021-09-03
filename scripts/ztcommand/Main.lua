@@ -4,11 +4,9 @@ include "scenario/scripts/token.lua"
 include "scenario/scripts/ui.lua"
 include "scenario/scripts/misc.lua"
 
--- Include tools script
-include "scripts/tools/luaTools.lua"
-
--- Include command scripts
-include "scripts/ztcommand/services/AnimalService.lua"
+-- Include ArluqTools
+include "scripts/ArluqTools/lua/try.lua"
+include "scripts/ArluqTools/services/AnimalService.lua"
 
 function Main(args)
     try(
