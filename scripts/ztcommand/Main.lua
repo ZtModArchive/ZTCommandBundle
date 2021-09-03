@@ -13,13 +13,11 @@ include "scripts/ztcommand/services/AnimalService.lua"
 function Main(args)
     try(
         function()
-            -- BFGManager
             local gameMgr = queryObject("BFGManager")
             if gameMgr == nil then
                 return error("BFGManager not found")
             end
 
-            -- Animals
             local animalList = findType("animal")
             if animalList == nil or type(animalList) ~= "table" then
                 return error("No animals found")
@@ -40,7 +38,6 @@ function Main(args)
                     local species = animal:BFG_GET_ATTR_STRING("s_Species")
                     animal:BFG_SET_ATTR_STRING("s_name", species)
 
-                    -- Execute commands
                     if string.find(name, "age=") then
                         local age = "Adult"
                         if string.find(name, "age=young") then
@@ -54,7 +51,14 @@ function Main(args)
                             isPregnant = true
                         end
                         AnimalService.setPregnant(animal, isPregnant)
-                        
+
+                    elseif string.find(name, "super=") then
+                        local isSuper = false
+                        if string.find(name, "super=true") then
+                            isSuper = true
+                        end
+                        AnimalService.setSuper(animal, isSuper)
+
                     end
                 end
             end
