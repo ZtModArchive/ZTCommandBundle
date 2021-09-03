@@ -44,6 +44,13 @@ function Main(args)
                             age = "Young"
                         end
                         AnimalService.setAge(animal, age)
+
+                    elseif string.find(name, "gender=") then
+                        local gender = "F"
+                        if string.find(name, "gender=male") then
+                            gender = "M"
+                        end
+                        AnimalService.setGender(animal, gender)
                     
                     elseif string.find(name, "pregnant=") then
                         local isPregnant = false
