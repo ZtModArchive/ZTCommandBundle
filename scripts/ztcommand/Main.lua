@@ -52,6 +52,11 @@ function Main(args)
                         end
                         AnimalService.setPregnant(animal, isPregnant)
 
+                    elseif string.find(name, "random") then
+                        local randomAnimalType = getRandomAnimalType()
+                        local species = getSpeciesFromType(randomAnimalType)
+                        AnimalService.setSpecies(animal, species)
+
                     elseif string.find(name, "super=") then
                         local isSuper = false
                         if string.find(name, "super=true") then
