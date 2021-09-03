@@ -36,26 +36,26 @@ function Main(args)
                 local name = animal:BFG_GET_ATTR_STRING("s_name")
                 if string.sub(name, 1, 3) == "ztc" then
 
+                    -- change the animal name to prevent relooping
+                    local species = animal:BFG_GET_ATTR_STRING("s_Species")
+                    animal:BFG_SET_ATTR_STRING("s_name", species)
+
                     -- Execute commands
                     if string.find(name, "age=") then
                         local age = "Adult"
                         if string.find(name, "age=young") then
                             age = "Young"
                         end
-                        setAge(animal, age)
-                    end
+                        AnimalService.setAge(animal, age)
                     
-                    if string.find(name, "pregnant=") then
+                    elseif string.find(name, "pregnant=") then
                         local isPregnant = false
                         if string.find(name, "pregnant=true") then
                             isPregnant = true
                         end
-                        setPregnant(animal, isPregnant)
+                        AnimalService.setPregnant(animal, isPregnant)
+                        
                     end
-
-                    -- change the animal name to prevent relooping
-                    local species = animal:BFG_GET_ATTR_STRING("s_Species")
-                    animal:BFG_SET_ATTR_STRING("s_name", species)
                 end
             end
         end

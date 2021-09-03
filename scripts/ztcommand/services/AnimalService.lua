@@ -7,9 +7,12 @@ include "scenario/scripts/misc.lua"
 -- Include tools script
 include "scripts/tools/luaTools.lua"
 
+--- Service for modifiying animals.
+AnimalService = {}
+
 --- Get animal age as sting
 --- @param animal animal
-function getAgeString (animal)
+function AnimalService.getAgeString (animal)
     local isAdult = animal:BFG_GET_ATTR_BOOLEAN("b_Adult")
     if isAdult then
         return "Adult"
@@ -19,7 +22,7 @@ end
 
 --- Get animal gender as sting
 --- @param animal animal
-function getGenderString (animal)
+function AnimalService.getGenderString (animal)
     local isMale = animal:BFG_GET_ATTR_BOOLEAN("b_Male")
     if isMale then
         return "M"
@@ -29,7 +32,7 @@ end
 
 --- Get animal super status as sting
 --- @param animal animal
-function getSuperString (animal)
+function AnimalService.getSuperString (animal)
     local isSuper = animal:BFG_GET_ATTR_BOOLEAN("b_Super")
     if isSuper then
         return "_Super"
@@ -40,10 +43,10 @@ end
 --- Set animal age
 --- @param animal animal
 --- @param age string
-function setAge (animal, age)
+function AnimalService.setAge (animal, age)
     local species = animal:BFG_GET_ATTR_STRING("s_Species")
-    local gender = self.getGenderString(animal)
-    local super = self.getSuperString(animal)
+    local gender = AnimalService.getGenderString(animal)
+    local super = AnimalService.getSuperString(animal)
 
     animal:BFG_ENTITY_MORPH_TO_NEW_ENTITY(species .. "_" .. age .. "_" .. gender .. super, false, 0, false, 1)
 end
@@ -51,10 +54,10 @@ end
 --- Set animal gender
 --- @param animal animal
 --- @param gender string
-function setGender (animal, gender)
+function AnimalService.setGender (animal, gender)
     local species = animal:BFG_GET_ATTR_STRING("s_Species")
-    local age = self.getAgeString(animal)
-    local super = self.getSuperString(animal)
+    local age = AnimalService.getAgeString(animal)
+    local super = AnimalService.getSuperString(animal)
 
     animal:BFG_ENTITY_MORPH_TO_NEW_ENTITY(species .. "_" .. age .. "_" .. gender .. super, false, 0, false, 1)
 end
@@ -62,7 +65,7 @@ end
 --- Set animal pregnancy
 --- @param animal animal
 --- @param isPregnant bool
-function setPregnant (animal, isPregnant)
+function AnimalService.setPregnant (animal, isPregnant)
     local isMale = animal:BFG_GET_ATTR_BOOLEAN("b_Male")
 
     if isPregnant then
@@ -80,10 +83,10 @@ end
 --- Set animal super status
 --- @param animal animal
 --- @param isSuper bool
-function setSuper (animal, isSuper)
+function AnimalService.setSuper (animal, isSuper)
     local species = animal:BFG_GET_ATTR_STRING("s_Species")
-    local age = self.getAgeString(animal)
-    local gender = self.getGenderString(animal)
+    local age = AnimalService.getAgeString(animal)
+    local gender = AnimalService.getGenderString(animal)
 
     if isSuper then
         animal:BFG_ENTITY_MORPH_TO_NEW_ENTITY(species .. "_" .. age .. "_" .. gender .. "_Super", false, 0, false, 1)
@@ -95,10 +98,10 @@ end
 --- Set animal species
 --- @param animal animal
 --- @param setSpecies string
-function setSpecies (animal, species)
-    local gender = self.getGenderString(animal)
-    local age = self.getAgeString(animal)
-    local super = self.getSuperString(animal)
+function AnimalService.setSpecies (animal, species)
+    local gender = AnimalService.getGenderString(animal)
+    local age = AnimalService.getAgeString(animal)
+    local super = AnimalService.getSuperString(animal)
 
     animal:BFG_ENTITY_MORPH_TO_NEW_ENTITY(species .. "_" .. age .. "_" .. gender .. super, false, 0, false, 1)
 end
