@@ -18,6 +18,8 @@ function AnimalCommands (animalList)
                 local age = "Adult"
                 if string.find(name, "age=young") then
                     age = "Young"
+                elseif string.find(name, "age=old") then
+                    age = "Old"
                 end
                 AnimalService.setAge(animal, age)
 

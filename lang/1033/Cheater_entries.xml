@@ -10,7 +10,7 @@
             <b>Cheat Codes</b>
          </color>
          <br />
-         Place this item to enable the Cheat Codes mod.
+         Place this item to enable ztc commands.
       </Cheater_ltt>
    </entityname>
    <LOC_STRING _locID="zoopedia_cheater:entry">Cheat Codes</LOC_STRING>
@@ -23,18 +23,15 @@
             <color r="255" g="255" b="255">
                <img src="entities/objects/scenery/Cheater/Cheater_icon.dds" sx="0" sy="0" sw="64" sh="64" />
                <p />
-               Placing this object in your zoo will active the cheat codes mod.
+               Placing this object in your zoo will enable ztc commands.
                <p />
-               Name an animal 'Young' and it will turn from adult into a young.
+               possible arguments:
                <p />
-               Name a female animal 'Pregnant' and it will become pregnant.
-		
-Made by
+               age=young/adult/old; gender=male/female; pregnant=true/false; random; super=true/false
+               <p />
+               Made by: 
                <u>
-                  <color r="255" g="231" b="135">Thom</color>
-               </u>
-               <u>
-                  <color r="255" g="231" b="135"></color>
+                  <color r="255" g="231" b="135">Thom, Mjmannella, Horse14t, Apodemus</color>
                </u>
             </color>
          </cell>
