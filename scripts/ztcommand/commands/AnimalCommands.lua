@@ -51,5 +51,9 @@ function AnimalCommands (animalList)
 
             end
         end
+
+        if name == "test" then
+            displayZooMessageTextWithZoom(tostring(AnimalService.getThirst(animal)), 1, 30)
+        end
     end
 end

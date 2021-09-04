@@ -1,0 +1,29 @@
+commands = {}
+dependencies = {
+   arluqtools = {
+      ["1.0-1"] = {}
+   }
+}
+modules = {
+   ["ArluqTools.lua.try"] = {
+      "arluqtools/1.0-1"
+   },
+   ["ArluqTools.services.AnimalService"] = {
+      "arluqtools/1.0-1"
+   }
+}
+repository = {
+   arluqtools = {
+      ["1.0-1"] = {
+         {
+            arch = "installed",
+            commands = {},
+            dependencies = {},
+            modules = {
+               ["ArluqTools.lua.try"] = "ArluqTools/lua/try.lua",
+               ["ArluqTools.services.AnimalService"] = "ArluqTools/services/AnimalService.lua"
+            }
+         }
+      }
+   }
+}

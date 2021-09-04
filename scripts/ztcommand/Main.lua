@@ -5,8 +5,8 @@ include "scenario/scripts/ui.lua"
 include "scenario/scripts/misc.lua"
 
 -- Include ArluqTools
-include "scripts/ArluqTools/lua/try.lua"
-include "scripts/ArluqTools/services/AnimalService.lua"
+include "scripts/lua_modules/share/lua/5.1/ArluqTools/lua/try.lua"
+include "scripts/lua_modules/share/lua/5.1/ArluqTools/services/AnimalService.lua"
 
 -- Include Command Managers
 include "scripts/ztcommand/commands/AnimalCommands.lua"
