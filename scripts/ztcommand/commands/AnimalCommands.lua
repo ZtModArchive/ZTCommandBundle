@@ -1,6 +1,6 @@
 -- Include ArluqTools
-include "scripts/ArluqTools/lua/try.lua"
-include "scripts/ArluqTools/services/AnimalService.lua"
+include "scripts/ArluqTools1/lua/try.lua"
+include "scripts/ArluqTools1/services/AnimalService.lua"
 
 function AnimalCommands (animalList)
     -- Loop over each animal
