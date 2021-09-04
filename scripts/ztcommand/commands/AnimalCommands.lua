@@ -1,3 +1,7 @@
+-- Include ArluqTools
+include "scripts/ArluqTools1/lua/try.lua"
+include "scripts/ArluqTools1/services/AnimalService.lua"
+
 function AnimalCommands (animalList)
     -- Loop over each animal
     local numAnimal = table.getn(animalList)
